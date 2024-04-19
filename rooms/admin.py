@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Room, Amenity
 
-@admin.register(Room)
+@admin.register(Room) #admin
 class RoomAdmin(admin.ModelAdmin):
   
   list_display = (
