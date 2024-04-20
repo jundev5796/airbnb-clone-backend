@@ -31,6 +31,9 @@ class Experience(CommonModel):
     "experiences.Perk",
   )
 
+  def __str__(self) -> str:
+    return self.name
+
 
 class Perk(CommonModel):
 
@@ -41,5 +44,13 @@ class Perk(CommonModel):
   )
   details = models.CharField(
     max_length=250,
+    blank=True,
+    default="",
   )
-  explanation = models.TextField()
+  explanation = models.TextField(
+    blank=True,
+    default="",
+  )
+
+  def __str__(self) -> str:
+    return self.name
