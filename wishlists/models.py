@@ -18,3 +18,6 @@ class Wishlist(CommonModel):
     "users.User",
     on_delete=models.CASCADE,
   )
+
+  def __str__(self) -> str:
+    return self.name
