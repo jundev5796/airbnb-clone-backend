@@ -1,7 +1,7 @@
 from django.db import models
 from common.models import CommonModel
 
-class Room(CommonModel):
+class ChattingRoom(CommonModel):
 
   """Room Model Definition"""
 
@@ -21,6 +21,6 @@ class Message(CommonModel):
     on_delete=models.SET_NULL,
   )
   room = models.ForeignKey(
-    "direct_messages.Room",
+    "direct_messages.ChattingRoom",
     on_delete=models.CASCADE,
   )
