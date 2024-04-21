@@ -42,3 +42,6 @@ class Booking(CommonModel):
     blank=True,
   )
   guests = models.PositiveBigIntegerField()
+
+  def __str__(self) -> str:
+    return f"{self.kind.title()} booking for: {self.user}"
