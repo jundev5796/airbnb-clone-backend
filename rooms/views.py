@@ -1,12 +1,18 @@
 from rest_framework.views import APIView
+from rest_framework.response import Response
+from .models import Amenity
+from .serializers import AmenitySerializer
+
 
 class Amenities(APIView):
-  
   def get(self, request):
-    pass
+    all_amenities = Amenity.objects.all()
+    serializer = AmenitySerializer(all_amenities, many=True)
+    return Response(serializer.data)
 
   def post(self, request):
     pass
+
 
 class AmenityDetail(APIView):
 
