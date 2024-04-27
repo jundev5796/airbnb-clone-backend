@@ -11,7 +11,12 @@ class Amenities(APIView):
     return Response(serializer.data)
 
   def post(self, request):
-    pass
+    serializer = AmenitySerializer(data=request.data)
+    if serializer.is_valid():
+      amenity = serializer.save()
+      return Response(AmenitySerializer(amenity).data)
+    else:
+      return Response(serializer.errors)
 
 
 class AmenityDetail(APIView):
